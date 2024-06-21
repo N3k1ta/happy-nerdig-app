@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav {
+  font-family: 'Geist Mono', monospace;
+@apply
+/* !!! idont' know! */
+  relative
+  /*  */
+  my-10 mx-auto 
+  max-w-7xl
+}
+nav .nav-menu{
+  
+  @apply
+    pb-1
+    flex items-center gap-2 
+    /* my-10 */
+}
+
+nav h1 {
+  
+  color: #D1D3D6;
+  @apply
+    text-10xl
+    pb-0
+    pt-0
+    mx-auto
+}
+.btn{
+  font-family: 'Geist Thin', monospace;
+  color: #D1D3D6;
+  @apply
+  px-5
+  py-1
+  border
+  border-[#D1D3D6]
+  rounded-full
+  
+}
