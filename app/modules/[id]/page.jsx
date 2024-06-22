@@ -1,0 +1,42 @@
+import nl2br from "@/app/hooks/nl2br"
+
+import { getModule } from "@/app/hooks/getModule"
+//styles
+import "./page.css"
+
+
+export default async function ModulePage({ params }) {
+  const module = await getModule(params.id)
+
+  return (
+    <main>
+      <div className="logo-content">
+        <div className="module-logo">
+          <h2>{module.name}</h2>
+        </div>
+      </div>
+      <div className="module-type-container">
+        <div className="module-type">
+          {module.type}
+        </div>
+      </div>
+      <div className="page-post">
+        <div className="module-img">
+          <img src={module.image_url_w} alt="" className="img" />
+          <img src={module.image_url_bk} alt="" className="img"/>
+        </div>
+        <div className="disc">
+          <div className="text-discript">
+            <p>{module.discript}</p>
+          </div>
+          <div className="tech-discript">
+            <li>{module.tech_dim}</li>
+          </div>
+        </div>
+      </div>
+      <p></p>
+      {/* <h2>Modules {module.name}</h2>
+      <img src={module.image.url}/> */}
+    </main>
+  )
+}

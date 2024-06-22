@@ -1,4 +1,4 @@
-import ModulesCards from "./api/modules/ModulesCards";
+import ModulesCards from "./components/ModulesCards";
 
 export default function Home() {
   return (

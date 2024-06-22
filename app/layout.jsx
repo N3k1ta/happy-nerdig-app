@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ModulesCards from "./api/modules/ModulesCards";
 ///components
 import Navbar from "./components/Navbar";
 

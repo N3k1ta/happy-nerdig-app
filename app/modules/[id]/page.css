@@ -1,0 +1,79 @@
+
+main{
+  font-family: 'Geist Thin', monospace;
+
+  @apply
+  
+  max-w-7xl
+  mx-auto
+  
+  /* bg-slate-600 */
+}
+
+.page-post{
+  @apply
+  inline-flex
+
+}
+.text-discript{
+  
+  @apply
+  p-7
+  text-left
+  /* bg-red-400 */
+}
+
+/* .logo-content{
+  @apply
+  flex justify-start 
+} */
+
+
+.module-logo{
+
+  color: #D1D3D6;
+  @apply
+    text-7xl
+    mx-auto
+    inline-block
+    p-3
+border-2
+  /* bg-green-600 */
+
+}
+.module-type-container{
+  @apply
+  flex justify-center 
+
+}
+.module-type{
+  @apply
+  text-center
+  max-w-3xl
+  text-4xl
+  /* bg-yellow-500 */
+}
+
+
+.module-img{
+  @apply
+  inline-flex
+  size-full
+  /* mt-1 */
+  mb-9
+  mx-7
+  /* bg-blue-600 */
+}
+.img{
+  @apply
+  mx-5
+}
+.tech-discript{
+  @apply
+  mt-1
+  mb-9
+  mx-10
+  inline-block
+/* bg-slate-500 */
+
+}
