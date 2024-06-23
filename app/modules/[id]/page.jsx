@@ -1,5 +1,3 @@
-import nl2br from "@/app/hooks/nl2br"
-
 import { getModule } from "@/app/hooks/getModule"
 //styles
 import "./page.css"
@@ -35,9 +33,6 @@ export default async function ModulePage({ params }) {
           </div>
         </div>
       </div>
-
-      {/* <h2>Modules {module.name}</h2>
-      <img src={module.image.url}/> */}
     </main>
   )
 }

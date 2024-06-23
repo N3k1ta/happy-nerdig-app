@@ -3,12 +3,15 @@
 @tailwind utilities;
 
 nav {
+
   font-family: 'Geist Mono', monospace;
 @apply
 /* !!! idont' know! */
   relative
   /*  */
-  my-10 mx-auto 
+  mt-4 
+  mb-8
+  mx-auto 
   max-w-7xl
 }
 nav .nav-menu{
