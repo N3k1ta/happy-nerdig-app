@@ -1,6 +1,7 @@
 import { getModule } from "@/app/hooks/getModule"
 //styles
 import "./page.css"
+import Navbar from "@/app/components/Navbar"
 
 
 export default async function ModulePage({ params }) {
@@ -8,11 +9,11 @@ export default async function ModulePage({ params }) {
 
   return (
     <main >
-
+      <Navbar modulName={module.name}/>
       <div className="logo-content" >
-        <div className="module-logo">
+        {/* <div className="module-logo">
           <h2>{module.name}</h2>
-        </div>
+        </div> */}
       </div>
       <div className="main2">
         <div className="module-img">

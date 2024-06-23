@@ -5,7 +5,7 @@ import Logo from "./hn-logo.png"
 import ModulesList from "./ModulesList";
 import "./Navbar.css"
 
-export default function Navbar() {
+export default function Navbar({modulName}) {
 
 
   return (
@@ -25,7 +25,7 @@ export default function Navbar() {
         <Link href={'/support'} className="btn">SUPPORT</Link>
       </div>
 
-      <h1>MODULES</h1>
+      <h1>{modulName ? modulName : 'MODULES'}</h1>
 
       <ModulesList />
     </nav>
