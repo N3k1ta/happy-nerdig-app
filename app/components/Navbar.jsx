@@ -8,6 +8,7 @@ export default function Navbar() {
   return (
     <nav >
       <div className="nav-menu">
+        <Link href={'/'}>
         <Image
           src={Logo}
           alt="Happy Nerding Logo"
@@ -16,6 +17,7 @@ export default function Navbar() {
           className="logo"
           priority
         />
+        </Link>
         <Link href={'/downloads'} className="btn">DOWNLOADS</Link>
         <Link href={'/support'} className="btn">SUPPORT</Link>
       </div>
