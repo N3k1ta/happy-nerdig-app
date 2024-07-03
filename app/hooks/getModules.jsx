@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { notFound } from 'next/navigation'
 
 export async function getModules() {
   const superbase = createServerComponentClient({ cookies })
@@ -8,6 +9,7 @@ export async function getModules() {
 
   if (error) {
     console.log(error.message)
+    notFound()
   }
   return data
 }

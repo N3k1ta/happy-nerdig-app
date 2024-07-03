@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.text-center {
+@apply
+m-5
+mt-96
+}
+
+p :hover{
+  cursor: pointer;
+  @apply
+  text-gray-400
+decoration-gray-400
+}

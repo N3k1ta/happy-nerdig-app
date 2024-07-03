@@ -10,10 +10,30 @@
 }
 
 .card-container {
+ 
   @apply
   relative
   max-w-7xl mx-auto
   pb-5
+  
+
+}
+.card-container-vca{
+  /* background-color: #292929; */
+  @apply
+  mx-auto
+  mb-10
+  
+
+}
+.card-container-effect{
+  /* background-color: #292929; */
+  @apply
+ 
+  mx-auto
+  mb-10
+
+ 
 }
 /* Card */
 .card {
@@ -37,6 +57,7 @@
   text-sm 
   rounded-md 
   py-3 px-4 
+  
 }
 .card :hover.card-content{
   @apply
