@@ -3,16 +3,34 @@
 @tailwind utilities;
 
 
+nav {
 
-.text-center {
+  font-family: 'Geist Mono', monospace;
 @apply
-m-5
-mt-96
+  relative
+  mt-4 
+  mb-8
+  mx-auto 
+  max-w-7xl
+}
+
+nav
+.text-center {
+  font-family: 'Geist Mono', monospace;
+  @apply
+  text-gray-300
+  m-5
+  mt-56
 }
 
 p :hover{
   cursor: pointer;
   @apply
-  text-gray-400
-decoration-gray-400
+  text-white
+  decoration-white
+}
+
+.underline{
+  @apply
+  text-2xl
 }

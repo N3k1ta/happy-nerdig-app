@@ -2,14 +2,17 @@ main{
   font-family: 'Geist Thin', monospace;
 
   @apply
-  my-10 mx-auto 
+  
+  mt-4 
+  mb-8 mx-auto 
   max-w-7xl
 }
 
-.main2{
+.container{
   font-family: 'Geist Thin', monospace;
 
   @apply
+  flex
   inline-block
   }
 
@@ -38,7 +41,7 @@ main{
     mx-auto
     inline-block
     p-3
-border-2
+    border-2
   /* bg-green-600 */
 
 }
@@ -59,23 +62,23 @@ border-2
 .module-img{
   @apply
   flex
-  max-w-xl
-
-  my-10
   mx-1
-
-  /* bg-yellow-600 */
 }
+
 .img{
   @apply
   px-5
 }
 .tech-discript{
   @apply
-  mt-10
+  mt-8
   mb-10
   mx-10
 
   max-w-sm
 
+}
+.video-container {
+  @apply
+  my-10
 }

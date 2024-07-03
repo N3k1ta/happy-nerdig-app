@@ -6,9 +6,7 @@ nav {
 
   font-family: 'Geist Mono', monospace;
 @apply
-/* !!! idont' know! */
   relative
-  /*  */
   mt-4 
   mb-8
   mx-auto 
@@ -27,6 +25,8 @@ nav h1 {
   color: #D1D3D6;
   @apply
     text-10xl
+    /* tracking-tight */
+    tracking-tighter
     pb-0
     pt-0
     mx-auto

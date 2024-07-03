@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loading {
+
+  font-family: 'Geist Mono', monospace;
+@apply
+  relative
+  mt-4 
+  mb-8
+  mx-auto 
+  max-w-7xl
+}
