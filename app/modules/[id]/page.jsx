@@ -16,8 +16,8 @@ export default async function ModulePage({ params }) {
   return (
     <main >
       <Navbar modulName={module.name} />
-      <div className="logo-content" >
-      </div>
+      {/* <div className="logo-content" >
+      </div> */}
       <div className="main2">
         <div className="module-img">
           <img src={module.image_url_w} alt="" className="img" />
