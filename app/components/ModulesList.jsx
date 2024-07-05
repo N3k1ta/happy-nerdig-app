@@ -9,12 +9,15 @@ export default async function ModulesList() {
   const sortModules = [...modules].sort((a, b) => (a.list_order - b.list_order))
 
   return (
-    <div className="grid" key={module.id}>
-      {sortModules.map((module) => (
+    <>
+      <div className="grid" key={module.id}>
+        {sortModules.map((module) => (
+          <div className="nav-link">
+            <Link href={`/modules/${module.id}`}>{module.name}</Link>
+          </div>
+        )).sort(module.list_order)}
 
-        <Link href={`/modules/${module.id}`}>{module.name}</Link>
-      )).sort(module.list_order)}
-
-    </div>
+      </div>
+    </>
   )
 }

@@ -1,6 +1,5 @@
 main{
   font-family: 'Geist Thin', monospace;
-
   @apply
   
   mt-4 
@@ -10,10 +9,8 @@ main{
 
 .container{
   font-family: 'Geist Thin', monospace;
-
   @apply
   flex
-  inline-block
   }
 
 
@@ -58,11 +55,12 @@ main{
   /* bg-yellow-500 */
 }
 
-
 .module-img{
   @apply
+  basis-1/4
   flex
   mx-1
+  
 }
 
 .img{

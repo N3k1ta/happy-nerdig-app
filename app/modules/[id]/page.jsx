@@ -19,8 +19,10 @@ export default async function ModulePage({ params }) {
     <main >
       <Navbar modulName={module.name} />
       <Suspense fallback={<Loading />}>
+
         <div className="container">
-          <div className="module-img">
+          {/* image */}
+          <div className="module-img ">
             <div>
               <img src={module.image_url_w} alt="" className="img" />
             </div>
@@ -28,8 +30,9 @@ export default async function ModulePage({ params }) {
               <img src={module.image_url_bk} alt="" className="img" />
             </div>
           </div>
+          {/* info page */}
           <div className="page-post">
-            <div className="disc">
+            <div className="discription">
               <div className="module-type">
                 {module.type}
               </div>
