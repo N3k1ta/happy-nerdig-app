@@ -10,7 +10,8 @@ main{
 .container{
   font-family: 'Geist Thin', monospace;
   @apply
-  flex
+  flex justify-around
+  /* flex-wrap */
   }
 
 
@@ -56,16 +57,20 @@ main{
 }
 
 .module-img{
+  /* min-width: fit-content; */
   @apply
-  basis-1/4
+  min-w-fit
+ /* bg-green-500 */
   flex
-  mx-1
+
   
 }
 
 .img{
+
   @apply
   px-5
+  
 }
 .tech-discript{
   @apply

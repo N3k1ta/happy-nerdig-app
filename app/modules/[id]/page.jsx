@@ -22,7 +22,7 @@ export default async function ModulePage({ params }) {
 
         <div className="container">
           {/* image */}
-          <div className="module-img ">
+          <div className="module-img">
             <div>
               <img src={module.image_url_w} alt="" className="img" />
             </div>

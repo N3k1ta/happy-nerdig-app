@@ -8,14 +8,17 @@
 .grid{
   
   @apply
-
-  max-w-7xl mx-auto
+  min-w-max
+   max-w-7xl mx-auto
   pb-5
   border-b-2 border-white
-  grid-rows-6 
   grid-flow-col
- 
+  grid-rows-6 
+
+
 }
+
+
 .nav-link{
   text-align: left;
   width: 10em;

@@ -16,7 +16,6 @@ export default async function ModulesList() {
             <Link href={`/modules/${module.id}`}>{module.name}</Link>
           </div>
         )).sort(module.list_order)}
-
       </div>
     </>
   )
