@@ -22,10 +22,10 @@ nav .nav-menu{
 
 nav h1 {
   
-  color: #D1D3D6;
+  color: #dcddde;
   @apply
     text-10xl
-    /* tracking-tight */
+
     tracking-tighter
     pb-0
     pt-0
@@ -37,6 +37,15 @@ nav h1 {
   @apply
   px-5
   py-1
+  border
+  border-[#D1D3D6]
+  rounded-full
+  
+}
+.logo{
+  
+  @apply
+ 
   border
   border-[#D1D3D6]
   rounded-full

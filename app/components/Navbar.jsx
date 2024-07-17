@@ -5,7 +5,7 @@ import Logo from "./hn-logo.png"
 import ModulesList from "./ModulesList";
 import "./Navbar.css"
 
-export default function Navbar({modulName}) {
+export default function Navbar({ modulName }) {
 
 
   return (
@@ -13,6 +13,7 @@ export default function Navbar({modulName}) {
       <div className="nav-menu">
         <Link href={'/'}>
           <Image
+            
             src={Logo}
             alt="Happy Nerding Logo"
             quality={100}

@@ -15,25 +15,12 @@
   relative
   max-w-7xl mx-auto
   pb-5
-  
+  /* bg-red-500 */
 
 }
-.card-container-vca{
-  /* background-color: #292929; */
+.card-container-row{
   @apply
-  mx-auto
-  mb-10
-  
-
-}
-.card-container-effect{
-  /* background-color: #292929; */
-  @apply
- 
-  mx-auto
-  mb-10
-
- 
+  my-5
 }
 /* Card */
 .card {
@@ -65,4 +52,10 @@
   scale-105 
   duration-150 
 
+}
+.modles-class{
+  color: #D1D3D6;
+  @apply
+  text-2xl
+  
 }

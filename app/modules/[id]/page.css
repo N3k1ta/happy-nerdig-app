@@ -57,11 +57,13 @@ main{
 }
 
 .module-img{
-  /* min-width: fit-content; */
+  
   @apply
+  my-10
   min-w-fit
  /* bg-green-500 */
   flex
+  h-fit
 
   
 }

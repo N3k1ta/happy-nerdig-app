@@ -8,11 +8,13 @@ export async function getModules() {
   ///this
   const superbase = createServerComponentClient({ cookies })
 
-  const { data, error } = await superbase.from('happy-nerding-modules').select()
+  const { data, error } = await superbase.
+    from('happy-nerding-modules')
+    .select()
 
   if (error) {
     console.log(error.message)
-    notFound()
+    // notFound()
   }
   return data
 }

@@ -22,7 +22,7 @@
 .nav-link{
   text-align: left;
   width: 10em;
-  
+  color: #dcddde;
   @apply
   pr-1
    pb-1
