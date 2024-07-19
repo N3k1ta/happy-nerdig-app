@@ -1,11 +1,9 @@
 "use client"
-import './AdminPage.css'
-import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabaseClient';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useState } from 'react';
 
-export default function AdminPage() {
+import "./AdminForm.css"
+
+export default function AdminForm({ user }) {
   const [modulName, setModulName] = useState('');
   const [modulType, setModulType] = useState('');
   const [modulPrice, setModulPrice] = useState('');
@@ -20,34 +18,9 @@ export default function AdminPage() {
   const [modulVideoLink3, setModulVideoLink3] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const [user, setUser] = useState(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    const session = supabase.auth.getSession();
-    if (!session) {
-      router.push('admin/login');
-    } else {
-      setUser(session.user);
-    }
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) {
-        router.push('admin/login');
-      } else {
-        setUser(session.user);
-      }
-    });
-  }, [router]);
-
-
-  if (!user) {
-    return <div>Loading...</div>;
-  }
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    ///////!!!
     console.log('Form Data:', { modulName, modulType });
     setIsLoading(true);
 
@@ -92,13 +65,10 @@ export default function AdminPage() {
 
   return (
     <>
-      <button className='btn m-2'>
-        <Link href={`/`}>Home</Link>
-      </button>
-      <form className="module-form" onSubmit={handleSubmit}>
+      <form className="module-form p-4" onSubmit={handleSubmit}>
         <div className='line'>
           <label>
-            <lable className="mr-2 w-20">Module Name</lable>
+            <label className="mr-2 w-20">Module Name</label>
             <input className='input'
               required
               type="text"
@@ -109,7 +79,7 @@ export default function AdminPage() {
         </div>
         <div className='line'>
           <label>
-            <lable className="mr-2 w-20">Module Type</lable>
+            <label className="mr-2 w-20">Module Type</label>
             <input className='input'
               required
               type="text"
@@ -142,7 +112,7 @@ export default function AdminPage() {
         </div>
         <div className='line'>
           <label>
-            <label>Module Discription</label>
+            <label>Module Description</label>
             <input className='input'
               required
               type="text"
@@ -153,7 +123,7 @@ export default function AdminPage() {
         </div>
         <div className='line'>
           <label>
-            <label>Module Tech Dimentions</label>
+            <label>Module Tech Dimensions</label>
             <input className='input'
               required
               type="text"
@@ -226,13 +196,14 @@ export default function AdminPage() {
             />
           </label>
         </div>
-
+        <div className='flex justify-center'>
+          <button className="btn m-4"
+            type="submit"
+            disabled={isLoading}>
+            {isLoading ? 'Adding...' : 'Add Module'}
+          </button>
+        </div>
       </form>
-      <button className="btn m-4 "
-        type="submit"
-        disabled={isLoading}>
-        {isLoading ? 'Adding...' : 'Add Module'}
-      </button>
     </>
   );
 }

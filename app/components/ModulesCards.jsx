@@ -70,13 +70,3 @@ export default async function ModulesCards() {
     </>
   )
 }
-{/* {modules.map((module) => (
-          <div className="card" key={module.id}>
-            <Link href={`/modules/${module.id}`}>
-              <div className="card-content ">
-                <h3 className="module-name">{module.name}</h3>
-                <img src={module.image_url_w} />
-              </div>
-            </Link>
-          </div>
-        ))} */}
