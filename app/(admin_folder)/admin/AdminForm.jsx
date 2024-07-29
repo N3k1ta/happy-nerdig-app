@@ -1,67 +1,78 @@
 "use client"
-import { useState } from 'react';
-
+import { useState } from 'react'
 import "./AdminForm.css"
+import { supabase } from '@/app/lib/supabaseClient'
 
-export default function AdminForm({ user }) {
-  const [modulName, setModulName] = useState('');
-  const [modulType, setModulType] = useState('');
-  const [modulPrice, setModulPrice] = useState('');
-  const [modulTypeView, setModulTypeView] = useState('');
-  const [modulDiscription, setModulDiscription] = useState('');
-  const [modulTechDim, setModulTechDim] = useState('');
-  const [modulTechCD, setModulTechCD] = useState('');
-  const [modulImage1, setModulImage1] = useState(null);
-  const [modulImage2, setModulImage2] = useState(null);
-  const [modulVideoLink1, setModulVideoLink1] = useState('');
-  const [modulVideoLink2, setModulVideoLink2] = useState('');
-  const [modulVideoLink3, setModulVideoLink3] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+export default function AdminForm() {
+  const [modulName, setModulName] = useState('')
+  const [modulType, setModulType] = useState('')
+  const [modulPrice, setModulPrice] = useState('')
+  const [modulTypeView, setModulTypeView] = useState('')
+  const [modulDiscription, setModulDiscription] = useState('')
+  const [modulTechDim, setModulTechDim] = useState('')
+  const [modulTechCD, setModulTechCD] = useState('')
+  const [modulImage1, setModulImage1] = useState(null)
+  const [modulImage2, setModulImage2] = useState(null)
+  const [modulVideoLink1, setModulVideoLink1] = useState('')
+  const [modulVideoLink2, setModulVideoLink2] = useState('')
+  const [modulVideoLink3, setModulVideoLink3] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    ///////!!!
-    console.log('Form Data:', { modulName, modulType });
-    setIsLoading(true);
+    e.preventDefault()
+    setIsLoading(true)
 
-    const formData = new FormData();
-    formData.append('modulName', modulName);
-    formData.append('modulType', modulType);
-    formData.append('modulPrice', modulPrice);
-    formData.append('modulTypeView', modulTypeView);
-    formData.append('modulDiscription', modulDiscription);
-    formData.append('modulTechDim', modulTechDim);
-    formData.append('modulTechCD', modulTechCD);
-    formData.append('modulImage1', modulImage1); // Appending file
-    formData.append('modulImage2', modulImage2); // Appending file
-    formData.append('modulVideoLink1', modulVideoLink1);
-    formData.append('modulVideoLink2', modulVideoLink2);
-    formData.append('modulVideoLink3', modulVideoLink3);
+    const uploadImage = async (imageFile) => {
+      if (!imageFile) {
+        console.log("No file selected for upload")
+        return null
+      }
+      console.log("Uploading file:", imageFile.name)
+      const filePath = `${imageFile.name}`
+      const { data, error } = await supabase.storage.from('hn-modules-photos').upload(filePath, imageFile)
+
+      if (error) {
+        console.error("Error uploading file:", error)
+        throw error
+      }
+      const publicUrl = supabase.storage.from('hn-modules-photos').getPublicUrl(filePath).publicUrl
+      console.log("File uploaded, public URL:", publicUrl)
+      return publicUrl
+    }
 
     try {
-      const response = await fetch('/api/modules/create', {
-        method: 'POST',
-        body: formData,
-      });
+      const photo1Url = await uploadImage(modulImage1)
+      const photo2Url = await uploadImage(modulImage2)
 
-      setIsLoading(false);
+      console.log('Photo 1 URL:', photo1Url)
+      console.log('Photo 2 URL:', photo2Url)
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Failed to create module:', errorData);
-        alert(`Error: ${errorData.error}`);
-        return;
+      const { data, error } = await supabase.from('happy-nerding-modules').insert([{
+        name: modulName,
+        price: modulPrice,
+        type: modulType,
+        type_view: modulTypeView,
+        discript: modulDiscription,
+        tech_dim: modulTechDim,
+        tech_cd: modulTechCD,
+        image_url_bk: photo1Url,
+        image_url_w: photo2Url,
+        videolink1: modulVideoLink1,
+        videolink2: modulVideoLink2,
+        videolink3: modulVideoLink3,
+      }]).select().single()
+
+      if (error) {
+        console.error('Error inserting data:', error)
+      } else {
+        console.log('Module added successfully:', data)
       }
-
-      const data = await response.json();
-      console.log('Module created successfully:', data);
-      alert('Module created successfully!');
     } catch (error) {
-      setIsLoading(false);
-      console.error('An error occurred:', error);
-      alert('An error occurred. Please try again.');
+      console.error('Error uploading files or inserting data:', error)
+    } finally {
+      setIsLoading(false)
     }
-  };
+  }
 
   return (
     <>
@@ -70,7 +81,7 @@ export default function AdminForm({ user }) {
           <label>
             <label className="mr-2 w-20">Module Name</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulName(e.target.value)}
               value={modulName}
@@ -81,7 +92,7 @@ export default function AdminForm({ user }) {
           <label>
             <label className="mr-2 w-20">Module Type</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulType(e.target.value)}
               value={modulType}
@@ -92,7 +103,7 @@ export default function AdminForm({ user }) {
           <label>
             <label className="mr-2 w-20">Module Price</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulPrice(e.target.value)}
               value={modulPrice}
@@ -103,7 +114,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Type View</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulTypeView(e.target.value)}
               value={modulTypeView}
@@ -114,7 +125,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Description</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulDiscription(e.target.value)}
               value={modulDiscription}
@@ -125,7 +136,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Tech Dimensions</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulTechDim(e.target.value)}
               value={modulTechDim}
@@ -136,7 +147,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Tech CD</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulTechCD(e.target.value)}
               value={modulTechCD}
@@ -147,7 +158,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Image 1</label>
             <input className='input'
-              required
+
               type="file"
               onChange={(e) => setModulImage1(e.target.files[0])}
             />
@@ -157,7 +168,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Image 2</label>
             <input className='input'
-              required
+
               type="file"
               onChange={(e) => setModulImage2(e.target.files[0])}
             />
@@ -167,7 +178,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Video Link 1</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulVideoLink1(e.target.value)}
               value={modulVideoLink1}
@@ -178,7 +189,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Video Link 2</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulVideoLink2(e.target.value)}
               value={modulVideoLink2}
@@ -189,7 +200,7 @@ export default function AdminForm({ user }) {
           <label>
             <label>Module Video Link 3</label>
             <input className='input'
-              required
+
               type="text"
               onChange={(e) => setModulVideoLink3(e.target.value)}
               value={modulVideoLink3}
@@ -197,13 +208,11 @@ export default function AdminForm({ user }) {
           </label>
         </div>
         <div className='flex justify-center'>
-          <button className="btn m-4"
-            type="submit"
-            disabled={isLoading}>
+          <button className="btn m-4" type="submit" disabled={isLoading}>
             {isLoading ? 'Adding...' : 'Add Module'}
           </button>
         </div>
       </form>
     </>
-  );
+  )
 }

@@ -3,9 +3,7 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { notFound } from 'next/navigation'
 
 export async function getModules() {
-  ///delete after test
-  // await new Promise(resolve => setTimeout(resolve, 3000))
-  ///this
+
   const superbase = createServerComponentClient({ cookies })
 
   const { data, error } = await superbase.
