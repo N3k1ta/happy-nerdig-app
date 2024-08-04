@@ -25,11 +25,10 @@ nav h1 {
   
   color: #dcddde;
   @apply
-    text-10xl
-
+    text-9xl
     tracking-tighter
-    pb-0
-    pt-0
+    pb-4
+    pt-4
     mx-auto
 }
 .btn{

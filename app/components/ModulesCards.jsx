@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { getModules } from "@/app/hooks/getModules"
 import "./ModulesCards.css"
 import { getModulesType } from "../hooks/getModulesType"
 import { Suspense } from "react"
@@ -8,18 +7,27 @@ import Loading from "../loading"
 
 
 export default async function ModulesCards() {
-  const modules = await getModules()
-  const vca_moduls = await getModulesType('vca')
-  const effect_moduls = await getModulesType('effect')
+
+  const vca_modules = await getModulesType('vca')
+  const effect_modules = await getModulesType('effect')
   const filter_modules = await getModulesType('filter')
   const utilities_modules = await getModulesType('utilities')
+
+  // sorting modules
+  const sortedModules = (modules) => modules.sort((a, b) => (a.row_list_order - b.row_list_order))
+
+  const vca_modules_sorted = sortedModules(vca_modules)
+  const effect_modules_sorted = sortedModules(effect_modules)
+  const filter_modules_sorted = sortedModules(filter_modules)
+  const utilities_modules_sorted = sortedModules(utilities_modules)
+
   return (
     <>
       <Suspense fallback={<Loading />}>
         <main className="card-container">
           <h1 className="modles-class">VCA / MIXER</h1>
           <div className="card-container-row">
-            {vca_moduls.map((vca_modul) => (
+            {vca_modules_sorted.map((vca_modul) => (
               <div className="card" key={vca_modul.id}>
                 <Link href={`/modules/${vca_modul.id}`}>
                   <div className="card-content ">
@@ -31,7 +39,7 @@ export default async function ModulesCards() {
           </div >
           <h1 className="modles-class">EFFECT</h1>
           <div className="card-container-row">
-            {effect_moduls.map((effect_modul) => (
+            {effect_modules_sorted.map((effect_modul) => (
               <div className="card" key={effect_modul.id}>
                 <Link href={`/modules/${effect_modul.id}`}>
                   <div className="card-content ">
@@ -43,7 +51,7 @@ export default async function ModulesCards() {
           </div >
           <h1 className="modles-class">FILTER</h1>
           <div className="card-container-row">
-            {filter_modules.map((filter_modul) => (
+            {filter_modules_sorted.map((filter_modul) => (
               <div className="card" key={filter_modul.id}>
                 <Link href={`/modules/${filter_modul.id}`}>
                   <div className="card-content ">
@@ -55,7 +63,7 @@ export default async function ModulesCards() {
           </div >
           <h1 className="modles-class">UTILITIES</h1>
           <div className="card-container-row">
-            {utilities_modules.map((util_modul) => (
+            {utilities_modules_sorted.map((util_modul) => (
               <div className="card" key={util_modul.id}>
                 <Link href={`/modules/${util_modul.id}`}>
                   <div className="card-content ">

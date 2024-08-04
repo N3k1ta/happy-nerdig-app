@@ -17,6 +17,9 @@ module.exports = {
         '11xl': '11rem',
         '12xl': '10rem',
       },
+      letterSpacing: {
+        'tighter': '-0.05em',
+      },
     },
   },
   plugins: [],
