@@ -35,7 +35,7 @@ export default function AdminForm() {
         console.error("Error uploading file:", error)
         throw error
       }
-      const publicUrl = supabase.storage.from('hn-modules-photos').getPublicUrl(filePath).publicUrl
+      const publicUrl = supabase.storage.from('hn-modules-photos').getPublicUrl(filePath)
       console.log("File uploaded, public URL:", publicUrl)
       return publicUrl
     }

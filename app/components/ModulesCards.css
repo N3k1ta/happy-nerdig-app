@@ -22,6 +22,7 @@
   @apply
   my-5
 }
+
 /* Card */
 .card {
   cursor: pointer;
@@ -37,13 +38,14 @@
   font-family: 'Geist Thin';
 
   @apply 
-  my-5 mx-5 
-  max-w-fit
-  border
-  border-slate-500
+  my-4 mx-2 
+  /* max-w-fit */
+  /* border
+  border-slate-500 */
   text-sm 
   rounded-md 
   py-3 px-4 
+    /* bg-red-500 */
   
 }
 .card :hover.card-content{
