@@ -1,9 +1,8 @@
-import Tab from "../components/Tab";
 
 export default function Downloads() {
   return (
     <>
-    <Tab/>
+      <h1 className="text-center text-7xl">Downloads page</h1>
     </>
   )
 }

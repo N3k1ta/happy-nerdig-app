@@ -9,9 +9,10 @@
   
   @apply
   min-w-max
-   max-w-7xl mx-auto
+  max-w-7xl mx-auto
   pb-5
-  border-b-2 border-white
+  border-b border-white
+  
   grid-flow-col
   grid-rows-6 
 
@@ -30,4 +31,8 @@
    /* bg-amber-300 */
    
    
+}
+.nav-link:hover {
+@apply
+text-gray-500
 }

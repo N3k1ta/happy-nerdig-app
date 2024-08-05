@@ -40,14 +40,24 @@ nav h1 {
   border
   border-[#D1D3D6]
   rounded-full
-  
+}
+
+.btn:hover{
+  @apply 
+  border-gray-400
+  text-gray-400
 }
 .logo{
   
   @apply
  
-  border
+  border-2
   border-[#D1D3D6]
   rounded-full
   
+}
+.logo:hover{
+  @apply
+  border-gray-200
+  /* brightness-75 */
 }

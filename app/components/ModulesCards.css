@@ -24,6 +24,13 @@
 }
 
 /* Card */
+.module-name{
+  @apply
+  text-sm
+  pb-1
+}
+
+
 .card {
   cursor: pointer;
 

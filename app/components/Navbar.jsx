@@ -22,7 +22,7 @@ export default async function Navbar({ modulName, user }) {
             src={Logo}
             alt="Happy Nerding Logo"
             quality={100}
-            width={210}
+            width={200}
             className="logo"
             priority
           />
