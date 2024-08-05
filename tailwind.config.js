@@ -20,6 +20,9 @@ module.exports = {
       letterSpacing: {
         'tighter': '-0.05em',
       },
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr))',
+      },
     },
   },
   plugins: [],

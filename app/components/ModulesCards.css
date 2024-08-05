@@ -20,9 +20,18 @@
 }
 .card-container-row{
   @apply
+  
+  flex flex-wrap
+  max-w-fit
   my-5
+  m-3
 }
-
+.main-container-row:hover h1{
+  @apply 
+  border-b border-gray-200
+  max-w-fit
+ /* bg-gray-900 rounded-xl */
+}
 /* Card */
 .module-name{
   @apply
