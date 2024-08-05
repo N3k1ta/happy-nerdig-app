@@ -12,6 +12,8 @@ export default async function ModulesCards() {
   // const effect_modules = await getModulesType('effect')
   // const filter_modules = await getModulesType('filter')
   // const utilities_modules = await getModulesType('utilities')
+
+
   const [vca_modules, effect_modules, filter_modules, utilities_modules] = await Promise.all([
     getModulesType('vca'),
     getModulesType('effect'),

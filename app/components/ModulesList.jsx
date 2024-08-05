@@ -10,9 +10,9 @@ export default async function ModulesList() {
 
   return (
     <>
-      <div className="grid" key={module.id}>
+      <div className="grid" >
         {sortModules.map((module) => (
-          <div className="nav-link">
+          <div className="nav-link" key={module.id}>
             <Link href={`/modules/${module.id}`}>{module.name}</Link>
           </div>
         )).sort(module.list_order)}
