@@ -8,10 +8,17 @@ import Loading from "../loading"
 
 export default async function ModulesCards() {
 
-  const vca_modules = await getModulesType('vca')
-  const effect_modules = await getModulesType('effect')
-  const filter_modules = await getModulesType('filter')
-  const utilities_modules = await getModulesType('utilities')
+  // const vca_modules = await getModulesType('vca')
+  // const effect_modules = await getModulesType('effect')
+  // const filter_modules = await getModulesType('filter')
+  // const utilities_modules = await getModulesType('utilities')
+  const [vca_modules, effect_modules, filter_modules, utilities_modules] = await Promise.all([
+    getModulesType('vca'),
+    getModulesType('effect'),
+    getModulesType('filter'),
+    getModulesType('utilities'),
+  ]);
+
 
   // sorting modules
   const sortedModules = (modules) => modules.sort((a, b) => (a.row_list_order - b.row_list_order))
