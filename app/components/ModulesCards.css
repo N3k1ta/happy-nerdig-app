@@ -14,8 +14,9 @@
   @apply
   relative
   max-w-7xl mx-auto
+  min-w-min
   pb-5
-  /* bg-red-500 */
+ 
 
 }
 .card-container-row{
@@ -26,12 +27,13 @@
   my-5
   m-3
 }
-.main-container-row:hover h1{
-  @apply 
+/* .main-container-row:hover h1{
+  @apply  
   border-b border-gray-200
-  max-w-fit
- /* bg-gray-900 rounded-xl */
-}
+  max-w-fit 
+ bg-gray-900 rounded-xl
+} */
+ 
 /* Card */
 .module-name{
   @apply

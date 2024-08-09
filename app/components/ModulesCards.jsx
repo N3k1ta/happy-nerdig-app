@@ -98,7 +98,7 @@ export default async function ModulesCards() {
                 </div>))}
             </div>
           </div >
-          <div className="main-container-row">
+          <div className="main-container-row mx-10">
             <h1 className="modles-class">ENVELOPE</h1>
             <div className="card-container-row">
               {envelope_modules_sorted.map((env_modul) => (
@@ -112,7 +112,7 @@ export default async function ModulesCards() {
                 </div>))}
             </div>
           </div >
-          <div className="main-container-row">
+          <div className="main-container-row mx-10">
             <h1 className="modles-class">VCO</h1>
             <div className="card-container-row">
               {vco_modules_sorted.map((vco_modul) => (

@@ -1,31 +1,30 @@
-"use client"
-import { useState } from "react"
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
-import LoginForm from "./LoginForm"
-import { useRouter } from "next/navigation"
+"use client";
+import { useState } from "react";
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import LoginForm from "./LoginForm";
+import { useRouter } from "next/navigation";
 
-import "./AdminLogin.css"
+import "./AdminLogin.css";
 
 export default function AdminLogin() {
-  const [error, setError] = useState('')
-  const router = useRouter()
+  const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (e, email, password) => {
-    e.preventDefault()
-    setError('')
-    const supabase = createClientComponentClient()
-    const { error } = await supabase.auth.signInWithPassword({
+    e.preventDefault();
+    setError('');
+    const supabase = createClientComponentClient();
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password
-    })
+    });
     if (error) {
-      setError(error.message)
+      setError(error.message);
+    } else {
+      console.log("Login successful:", data);
+      router.push('/admin');
     }
-    if (!error) {
-      router.push('/admin')
-    }
-  }
-
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen ">
@@ -39,5 +38,4 @@ export default function AdminLogin() {
       </div>
     </div>
   );
-
 }
