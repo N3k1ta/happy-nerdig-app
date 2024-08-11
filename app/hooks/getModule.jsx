@@ -17,7 +17,7 @@ export async function getModule(moduleId) {
 
   if (error) {
     console.log(error.message)
-    // notFound()
+    notFound()
 
   }
   return data

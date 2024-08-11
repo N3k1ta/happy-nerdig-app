@@ -1,11 +1,15 @@
+
 import TextRenderer from "@/app/hooks/TextRenderer"
 import Navbar from "@/app/components/Navbar"
+import ilRenderer from "@/app/hooks/ilRenderer"
+import Loading from "@/app/loading"
+
 import { getModule } from "@/app/hooks/getModule"
+import { Suspense } from "react"
+
 //styles
 import "./page.css"
-import ilRenderer from "@/app/hooks/ilRenderer"
-import { Suspense } from "react"
-import Loading from "@/app/loading"
+
 
 
 export default async function ModulePage({ params }) {
@@ -15,6 +19,8 @@ export default async function ModulePage({ params }) {
   const cd = ilRenderer(module.tech_cd)
 
 
+
+
   return (
     <main >
       <Navbar modulName={module.name} />
@@ -22,11 +28,12 @@ export default async function ModulePage({ params }) {
 
         <div className="container">
           {/* image */}
+
           <div className="module-img">
-            <div>
+            <div className="image-module-holder">
               <img src={module.image_url_w} alt="" className="img" />
             </div>
-            <div>
+            <div className="image-module-holder">
               <img src={module.image_url_bk} alt="" className="img" />
             </div>
           </div>

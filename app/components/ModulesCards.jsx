@@ -50,7 +50,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${vca_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{vca_modul.name}</h3>
-                      <img src={vca_modul.image_url_w} />
+                      <img className="photo" src={vca_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
@@ -64,7 +64,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${effect_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{effect_modul.name}</h3>
-                      <img src={effect_modul.image_url_w} />
+                      <img className="photo" src={effect_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
@@ -78,7 +78,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${filter_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{filter_modul.name}</h3>
-                      <img src={filter_modul.image_url_w} />
+                      <img className="photo" src={filter_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
@@ -92,7 +92,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${util_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{util_modul.name}</h3>
-                      <img src={util_modul.image_url_w} />
+                      <img className="photo" src={util_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
@@ -106,7 +106,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${env_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{env_modul.name}</h3>
-                      <img src={env_modul.image_url_w} />
+                      <img className="photo" src={env_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
@@ -120,7 +120,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${vco_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{vco_modul.name}</h3>
-                      <img src={vco_modul.image_url_w} />
+                      <img className="photo" src={vco_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
@@ -134,14 +134,12 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${u1_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{u1_modul.name}</h3>
-                      <img src={u1_modul.image_url_w} />
+                      <img  src={u1_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
             </div>
           </div>
-
-
         </main>
       </Suspense>
     </>

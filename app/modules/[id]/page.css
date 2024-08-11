@@ -5,13 +5,14 @@ main{
   mt-4 
   mb-8 mx-auto 
   max-w-7xl
+ 
 }
 
 .container{
-  font-family: 'Geist Thin', monospace;
   @apply
   flex justify-around
-  /* flex-wrap */
+
+ 
   }
 
 
@@ -40,7 +41,7 @@ main{
     inline-block
     p-3
     border-2
-  /* bg-green-600 */
+
 
 }
 .module-type-container{
@@ -53,7 +54,7 @@ main{
   text-center
   max-w-3xl
   text-4xl
-  /* bg-yellow-500 */
+ 
 }
 
 .module-img{
@@ -61,19 +62,20 @@ main{
   @apply
   my-10
   min-w-fit
- /* bg-green-500 */
+
   flex
   h-fit
 
-  
 }
 
 .img{
-
   @apply
-  px-5
-  
+  px-2
+  h-2/3
+
 }
+
+
 .tech-discript{
   @apply
   mt-8
@@ -86,4 +88,9 @@ main{
 .video-container {
   @apply
   my-10
+}
+.image-module-holder{
+
+
+
 }

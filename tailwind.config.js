@@ -23,6 +23,9 @@ module.exports = {
       gridTemplateColumns: {
         '16': 'repeat(16, minmax(0, 1fr))',
       },
+      minWidth: {
+        '48': '35rem',
+      },
     },
   },
   plugins: [],

@@ -6,14 +6,14 @@ export const uploadImage = async (imageFile) => {
     return null;
   }
   const filePath = `${imageFile.name}`;
-  const { data, error } = await supabase.storage.from('hn-modules-photos').upload(filePath, imageFile);
+  const { data, error } = await supabase.storage.from('hn-modules-photos-main/'+ `${imageFile.name}`).upload(filePath, imageFile);
 
   if (error) {
     console.error("Error uploading file:", error);
     throw error;
   }
 
-  const { data: publicUrlData } = supabase.storage.from('hn-modules-photos').getPublicUrl(filePath);
+  const { data: publicUrlData } = supabase.storage.from('hn-modules-photos-main').getPublicUrl(filePath);
   return publicUrlData.publicUrl;
 };
 
@@ -41,7 +41,7 @@ export const handleSubmit = async (e, state, setIsLoading, router) => {
     const photo2Url = await uploadImage(modulImage2);
 
 
-    const { data, error } = await supabase.from('happy-nerding-modules').insert([{
+    const { data, error } = await supabase.from('happy-nerding-modules-main').insert([{
       name: modulName,
       price: modulPrice,
       type: modulType,
