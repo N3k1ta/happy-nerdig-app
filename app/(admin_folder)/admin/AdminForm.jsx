@@ -100,7 +100,7 @@ export default function AdminForm() {
       </div>
       <div className='line'>
         <label>
-          <label>Module Price</label>
+          <label>Module Price</label><label className='text-red-400'>(numbers only)</label>
           <input className='input'
             type="text"
             onChange={(e) => setModulPrice(e.target.value)}
@@ -145,11 +145,11 @@ export default function AdminForm() {
             onChange={(e) => setModulTechCD(e.target.value)}
             value={modulTechCD}
           />
-        </label>
+        </label> 
       </div>
       <div className='line'>
         <label>
-          <label>Module Image 1 </label><label className='text-red-400'>(.png file &lt; 50Mb)</label>
+          <label>Module Image 1 </label><label className='text-red-400'>(.jpg file &lt; 50Mb)</label>
           <input className='input'
             type="file"
             onChange={(e) => setModulImage1(e.target.files[0])}
@@ -159,7 +159,7 @@ export default function AdminForm() {
       </div>
       <div className='line'>
         <label>
-          <label>Module Image 2 </label><label className='text-red-400'>(.png file &lt; 50Mb)</label>
+          <label>Module Image 2 </label><label className='text-red-400'>(.jpg file &lt; 50Mb)</label>
           <input className='input'
             type="file"
             onChange={(e) => setModulImage2(e.target.files[0])}
@@ -168,7 +168,7 @@ export default function AdminForm() {
       </div>
       <div className='line'>
         <label>
-          <label>Module Video Link 1</label>
+          <label>Module Video Link 1</label><label className='text-red-400'>(embed format only)</label>
           <input className='input'
             type="text"
             onChange={(e) => setModulVideoLink1(e.target.value)}
@@ -178,7 +178,7 @@ export default function AdminForm() {
       </div>
       <div className='line'>
         <label>
-          <label>Module Video Link 2</label>
+          <label>Module Video Link 2</label><label className='text-red-400'>(embed format only)</label>
           <input className='input'
             type="text"
             onChange={(e) => setModulVideoLink2(e.target.value)}
@@ -188,7 +188,7 @@ export default function AdminForm() {
       </div>
       <div className='line'>
         <label>
-          <label>Module Video Link 3</label>
+          <label>Module Video Link 3</label><label className='text-red-400'>(embed format only)</label>
           <input className='input'
             type="text"
             onChange={(e) => setModulVideoLink3(e.target.value)}
