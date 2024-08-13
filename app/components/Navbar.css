@@ -17,8 +17,10 @@ nav .nav-menu{
   
   @apply
     pb-1
-    flex items-center gap-2 
-    /* my-10 */
+    flex items-center
+    gap-3
+
+    
 }
 
 nav h1 {
@@ -59,5 +61,6 @@ nav h1 {
 .logo:hover{
   @apply
   border-gray-200
+  brightness-90
   /* brightness-75 */
 }

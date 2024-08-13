@@ -126,7 +126,7 @@ export default async function ModulesCards() {
                 </div>))}
             </div>
           </div >
-          <div className="main-container-row mx-5">
+          <div className="main-container-row">
             <h1 className="modles-class">1U</h1>
             <div className="card-container-row">
               {u1_modules_sorted.map((u1_modul) => (
@@ -134,7 +134,21 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${u1_modul.id}`}>
                     <div className="card-content ">
                       <h3 className="module-name">{u1_modul.name}</h3>
-                      <img  src={u1_modul.image_url_w} />
+                      <img src={u1_modul.image_url_w} />
+                    </div>
+                  </Link>
+                </div>))}
+            </div>
+          </div>
+          <div className="main-container-row">
+            <h1 className="modles-class">DOTCOM</h1>
+            <div className="card-container-row">
+              {u1_modules_sorted.map((u1_modul) => (
+                <div className="card" key={u1_modul.id}>
+                  <Link href={`/modules/${u1_modul.id}`}>
+                    <div className="card-content ">
+                      <h3 className="module-name">{u1_modul.name}</h3>
+                      <img src={u1_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>))}
