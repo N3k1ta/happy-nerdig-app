@@ -20,12 +20,38 @@ export default async function ModulePage({ params }) {
       <Suspense fallback={<Loading />}>
         <div className="container flex justify-around">
           {/* image */}
-          <div className="module-img my-10 min-w-fit flex h-fit">
-            <div className="image-module-holder">
-              <img src={module.image_url_w} alt="" className="img px-2 h-2/3" />
+          <div className="container-left block">
+            <div className="module-img mt-10 min-w-fit flex h-fit">
+              <div className="image-module-holder">
+                <img src={module.image_url_w} alt="" className="img px-2 h-2/3" />
+              </div>
+              <div className="image-module-holder">
+                <img src={module.image_url_bk} alt="" className="img px-2 h-2/3" />
+              </div>
             </div>
-            <div className="image-module-holder">
-              <img src={module.image_url_bk} alt="" className="img px-2 h-2/3" />
+            <div className="shops-container grid grid-cols-2 gap-2 p-4 bg-green-500 max-w-md">
+              <div className=" ">
+                {module.shops &&
+                  Object.keys(module.shops).map((key) => {
+                    const shop = module.shops[key];
+                    return (
+                      <Link
+                        href={shop.url}
+                        key={shop.id}
+                        className="shop-container flex flex-col items-center">
+                        <img
+                          src={shop.image}
+                          alt={shop.name}
+                          className="shop-logo mb-2 w-auto h-24"
+                        />
+                        <span className="shop-name text-center">{shop.name}</span>
+                        <span className="shop-area text-center text-sm text-gray-500">
+                          {shop.area}
+                        </span>
+                      </Link>
+                    );
+                  })}
+              </div>
             </div>
           </div>
           {/* info page */}
@@ -86,28 +112,7 @@ export default async function ModulePage({ params }) {
           </div>
         </div>
         {/* Shops */}
-        <div className="shops-container grid grid-cols-2 gap-2 p-4 bg-green-500 max-w-md">
-          {module.shops &&
-            Object.keys(module.shops).map((key) => {
-              const shop = module.shops[key];
-              return (
-                <Link
-                  href={shop.url}
-                  key={shop.id}
-                  className="shop-container flex flex-col items-center">
-                  <img
-                    src={shop.image}
-                    alt={shop.name}
-                    className="shop-logo mb-2 w-auto h-24"
-                  />
-                  <span className="shop-name text-center">{shop.name}</span>
-                  <span className="shop-area text-center text-sm text-gray-500">
-                    {shop.area}
-                  </span>
-                </Link>
-              );
-            })}
-        </div>
+
       </Suspense>
     </main>
   );
