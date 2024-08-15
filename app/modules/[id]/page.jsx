@@ -15,53 +15,55 @@ export default async function ModulePage({ params }) {
   const cd = ilRenderer(module.tech_cd);
 
   return (
-    <main className="font-[Geist Thin] mt-4 mb-8 mx-auto max-w-7xl">
+    <main className=" mt-4 mb-8 mx-auto max-w-7xl font-geist-thin">
       <Navbar modulName={module.name} />
       <Suspense fallback={<Loading />}>
-        <div className="container flex justify-around">
+        <div className="container flex justify-around w-ful  ">
           {/* image */}
-          <div className="container-left block">
-            <div className="module-img mt-10 min-w-fit flex h-fit">
-              <div className="image-module-holder">
-                <img src={module.image_url_w} alt="" className="img px-2 h-2/3" />
+          <div className="container-left block w-2/3">
+            <div className="module-img mt-10 flex justify-center ">
+              <div className="image-module-holder flex justify-center">
+                <img src={module.image_url_w} alt="" className="img m-2 w-2/4 " />
               </div>
-              <div className="image-module-holder">
-                <img src={module.image_url_bk} alt="" className="img px-2 h-2/3" />
-              </div>
+              {module.image_url_bk &&
+                <div className="image-module-holder flex justify-center">
+                  <img src={module.image_url_bk} alt="" className="img m-2  w-2/4 " />
+                </div>}
+              {/* Shops */}
             </div>
-            <div className="shops-container grid grid-cols-2 gap-2 p-4 bg-green-500 max-w-md">
-              <div className=" ">
-                {module.shops &&
-                  Object.keys(module.shops).map((key) => {
-                    const shop = module.shops[key];
-                    return (
-                      <Link
-                        href={shop.url}
-                        key={shop.id}
-                        className="shop-container flex flex-col items-center">
-                        <img
-                          src={shop.image}
-                          alt={shop.name}
-                          className="shop-logo mb-2 w-auto h-24"
-                        />
-                        <span className="shop-name text-center">{shop.name}</span>
-                        <span className="shop-area text-center text-sm text-gray-500">
-                          {shop.area}
-                        </span>
-                      </Link>
-                    );
-                  })}
-              </div>
+            <span className="text-xl flex justify-center mt-10">Where to buy:</span>
+            <div className="shops-container flex flex-raw p-4 mt-10  shop ">
+              {module.shops &&
+                Object.keys(module.shops).map((key) => {
+                  const shop = module.shops[key];
+                  return (
+                    <Link
+                      href={shop.url}
+                      key={shop.id}
+                      target="_blank"
+                      className="shop-container flex flex-col group items-center m-4">
+                      < img
+                        src={shop.image}
+                        alt={shop.name}
+                        className="shop-logo mb-2 w-auto h-24"
+                      />
+                      <span className="shop-name text-center">{shop.name}</span>
+                      <span className="shop-area text-center text-sm  text-gray-400 group-hover:text-gray-300">
+                        {shop.area}
+                      </span>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
           {/* info page */}
-          <div className="page-post inline-flex">
+          <div className="page-post inline-flex w-3/5 ">
             <div className="discription">
-              <div className="module-type text-center max-w-3xl text-4xl">
+              <div className="module-type text-center max-w-3xl text-4xl ">
                 {module.type}
               </div>
               {/* text */}
-              <div className="text-discript p-7 max-w-2xl text-left">
+              <div className="text-discript p-7 max-w-2xl text-left ">
                 <div>{discrpt}</div>
               </div>
               <div className="tech-discript mt-8 mb-10 mx-10 max-w-sm">
@@ -73,10 +75,10 @@ export default async function ModulePage({ params }) {
                 <span>{cd}</span>
 
                 <br />
-                <h3 className="text-lg">Price</h3>
+                {/* <h3 className="text-lg">Price</h3>
                 <div className="price-container">
                   <span>{module.price}$</span>
-                </div>
+                </div> */}
                 {/* video */}
                 <div className="video-container my-10">
                   {module.videolink1 && (
@@ -114,6 +116,6 @@ export default async function ModulePage({ params }) {
         {/* Shops */}
 
       </Suspense>
-    </main>
+    </main >
   );
 }
