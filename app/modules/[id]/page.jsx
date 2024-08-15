@@ -18,7 +18,7 @@ export default async function ModulePage({ params }) {
     <main className=" mt-4 mb-8 mx-auto max-w-7xl font-geist-thin">
       <Navbar modulName={module.name} />
       <Suspense fallback={<Loading />}>
-        <div className="container flex justify-around w-ful  ">
+        <div className="container flex  w-ful  ">
           {/* image */}
           <div className="container-left block w-2/3">
             <div className="module-img mt-10 flex justify-center ">
@@ -26,12 +26,12 @@ export default async function ModulePage({ params }) {
                 <img src={module.image_url_w} alt="" className="img m-2 w-2/4 " />
               </div>
               {module.image_url_bk &&
-                <div className="image-module-holder flex justify-center">
+                <div className="image-module-holder flex justify-center ">
                   <img src={module.image_url_bk} alt="" className="img m-2  w-2/4 " />
                 </div>}
               {/* Shops */}
             </div>
-            <span className="text-xl flex justify-center mt-10">Where to buy:</span>
+            <span className="text-xl flex justify-center mt-10 font-bold text-gray-400">Where to buy:</span>
             <div className="shops-container flex flex-raw p-4 mt-10  shop ">
               {module.shops &&
                 Object.keys(module.shops).map((key) => {
@@ -57,9 +57,9 @@ export default async function ModulePage({ params }) {
             </div>
           </div>
           {/* info page */}
-          <div className="page-post inline-flex w-3/5 ">
+          <div className="page-post flex  ">
             <div className="discription">
-              <div className="module-type text-center max-w-3xl text-4xl ">
+              <div className="module-type text-center max-w-3xl text-4xl mt-10">
                 {module.type}
               </div>
               {/* text */}
@@ -80,35 +80,37 @@ export default async function ModulePage({ params }) {
                   <span>{module.price}$</span>
                 </div> */}
                 {/* video */}
-                <div className="video-container my-10">
-                  {module.videolink1 && (
-                    <div className="video1">
-                      <iframe
-                        width="560"
-                        height="315"
-                        src={module.videolink1}
-                      ></iframe>
-                    </div>
-                  )}
-                  {module.videolink2 && (
-                    <div className="video2">
-                      <iframe
-                        width="560"
-                        height="315"
-                        src={module.videolink2}
-                      ></iframe>
-                    </div>
-                  )}
-                  {module.videolink3 && (
-                    <div className="video3">
-                      <iframe
-                        width="560"
-                        height="315"
-                        src={module.videolink3}
-                      ></iframe>
-                    </div>
-                  )}
-                </div>
+                <div className="flex justify-start">
+                  <div className="video-container  my-10">
+                    {module.videolink1 && (
+                      <div className="video1">
+                        <iframe
+                          width="560"
+                          height="315"
+                          src={module.videolink1}
+                        ></iframe>
+                      </div>
+                    )}
+                    {module.videolink2 && (
+                      <div className="video2 mt-6">
+                        <iframe
+                          width="560"
+                          height="315"
+                          src={module.videolink2}
+                        ></iframe>
+                      </div>
+                    )}
+                    {module.videolink3 && (
+                      <div className="video3">
+                        <iframe
+                          width="560"
+                          height="315"
+                          src={module.videolink3}
+                        ></iframe>
+                      </div>
+                    )}
+                  </div></div>
+
               </div>
             </div>
           </div>
