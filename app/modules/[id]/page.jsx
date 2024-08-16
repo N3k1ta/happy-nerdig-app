@@ -32,7 +32,7 @@ export default async function ModulePage({ params }) {
               {/* Shops */}
             </div>
             <span className="text-xl flex justify-center mt-10 font-bold text-gray-400">Where to buy:</span>
-            <div className="shops-container flex flex-raw p-4 mt-10  shop ">
+            <div className="shops-container flex flex-row p-4 mt-10 ">
               {module.shops &&
                 Object.keys(module.shops).map((key) => {
                   const shop = module.shops[key];
