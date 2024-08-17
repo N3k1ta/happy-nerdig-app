@@ -15,7 +15,7 @@ export default async function ModulePage({ params }) {
   const cd = ilRenderer(module.tech_cd);
 
   return (
-    <main className=" mt-4 mb-8 mx-auto max-w-7xl font-geist-thin">
+    <main className=" mt-4 mb-8 mx-auto max-w-7xl font-geist-thin bg-red-300">
       <Navbar modulName={module.name} />
       <Suspense fallback={<Loading />}>
         <div className="container flex  w-ful  ">
@@ -31,8 +31,8 @@ export default async function ModulePage({ params }) {
                 </div>}
               {/* Shops */}
             </div>
-            <span className="text-xl flex justify-center mt-10 font-bold text-gray-400">Where to buy:</span>
-            <div className="shops-container flex flex-row p-4 mt-10 ">
+            <span className="text-xl flex justify-center mt-10 font-bold text-gray-400 ">Where to buy:</span>
+            <div className="shops-container flex flex-wrap justify-center gap-4 p-4 mt-4 w-full">
               {module.shops &&
                 Object.keys(module.shops).map((key) => {
                   const shop = module.shops[key];
@@ -41,20 +41,21 @@ export default async function ModulePage({ params }) {
                       href={shop.url}
                       key={shop.id}
                       target="_blank"
-                      className="shop-container flex flex-col group items-center m-4">
-                      < img
+                      className="shop-container flex flex-col group items-center">
+                      <img
                         src={shop.image}
                         alt={shop.name}
-                        className="shop-logo mb-2 w-auto h-24"
+                        className="shop-logo mb-2 w-auto h-24 max-w-[120px] object-contain" // Ensure images stay within limits
                       />
                       <span className="shop-name text-center">{shop.name}</span>
-                      <span className="shop-area text-center text-sm  text-gray-400 group-hover:text-gray-300">
+                      <span className="shop-area text-center text-sm text-gray-400 group-hover:text-gray-300">
                         {shop.area}
                       </span>
                     </Link>
                   );
                 })}
             </div>
+
           </div>
           {/* info page */}
           <div className="page-post flex  ">
