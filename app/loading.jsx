@@ -1,15 +1,13 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import "./loading.css"
-
 
 export default function Loading() {
   return (
-    <main className='loading'>
+    <main className="relative mt-4 mb-8 mx-auto max-w-7xl font-geist-mono">
       <Navbar />
-      <main className='text-center text-xl'>
+      <div className="text-center text-xl">
         <h2>Loading...</h2>
-      </main>
+      </div>
     </main>
   )
 }

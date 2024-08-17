@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from 'react';
-import "./AdminForm.css";
 import { handleSubmit } from '@/app/components/adminFormFunctions';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/app/lib/supabaseClient';
@@ -72,135 +71,180 @@ export default function AdminForm() {
   }
 
   return (
-    <form className="module-form p-4" onSubmit={(e) => handleSubmit(e, state, setIsLoading, router)}>
-      <div className='text-center'>
-        <h1>Create New Module</h1>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Name</label>
-          <input className='input'
-            type="text"
-            onChange={(e) => setModulName(e.target.value)}
-            value={modulName}
-            required
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Type</label>
-          <input className='input'
-            type="text"
-            onChange={(e) => setModulType(e.target.value)}
-            value={modulType}
-            required
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Price</label><label className='text-red-400'>(numbers only)</label>
-          <input className='input'
-            type="text"
-            onChange={(e) => setModulPrice(e.target.value)}
-            value={modulPrice}
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Type View</label>
-          <input className='input'
-            type="text"
-            onChange={(e) => setModulTypeView(e.target.value)}
-            value={modulTypeView}
-            required
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Description</label>
-          <textarea className='input'
-            onChange={(e) => setModulDiscription(e.target.value)}
-            value={modulDiscription}
-            required
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Tech Dimensions</label>
-          <textarea className='input'
-            onChange={(e) => setModulTechDim(e.target.value)}
-            value={modulTechDim}
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Tech CD</label>
-          <textarea className='input'
-            onChange={(e) => setModulTechCD(e.target.value)}
-            value={modulTechCD}
-          />
-        </label> 
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Image 1 </label><label className='text-red-400'>(.jpg file &lt; 50Mb)</label>
-          <input className='input'
-            type="file"
-            onChange={(e) => setModulImage1(e.target.files[0])}
-            required
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Image 2 </label><label className='text-red-400'>(.jpg file &lt; 50Mb)</label>
-          <input className='input'
-            type="file"
-            onChange={(e) => setModulImage2(e.target.files[0])}
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Video Link 1</label><label className='text-red-400'>(embed format only)</label>
-          <input className='input'
-            type="text"
-            onChange={(e) => setModulVideoLink1(e.target.value)}
-            value={modulVideoLink1}
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Video Link 2</label><label className='text-red-400'>(embed format only)</label>
-          <input className='input'
-            type="text"
-            onChange={(e) => setModulVideoLink2(e.target.value)}
-            value={modulVideoLink2}
-          />
-        </label>
-      </div>
-      <div className='line'>
-        <label>
-          <label>Module Video Link 3</label><label className='text-red-400'>(embed format only)</label>
-          <input className='input'
-            type="text"
-            onChange={(e) => setModulVideoLink3(e.target.value)}
-            value={modulVideoLink3}
-          />
-        </label>
-      </div>
-      <div className='flex justify-center'>
-        <button className="btn m-4" type="submit" disabled={isLoading}>
-          {isLoading ? 'Adding...' : 'Add Module'}
-        </button>
-      </div>
-    </form>
+    <div className="min-h-screen max-w-7xl mx-auto p-4">
+      <form 
+        className="font-geist-thin border rounded-md h-fit w-fit text-white p-4"
+        onSubmit={(e) => handleSubmit(e, state, setIsLoading, router)}
+      >
+        <div className="text-center">
+          <h1>Create New Module</h1>
+        </div>
+        
+        {/* Module Name */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Name</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="text"
+              onChange={(e) => setModulName(e.target.value)}
+              value={modulName}
+              required
+            />
+          </label>
+        </div>
+
+        {/* Module Type */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Type</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="text"
+              onChange={(e) => setModulType(e.target.value)}
+              value={modulType}
+              required
+            />
+          </label>
+        </div>
+
+        {/* Module Price */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Price</span><span className="text-red-400">(numbers only)</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="text"
+              onChange={(e) => setModulPrice(e.target.value)}
+              value={modulPrice}
+            />
+          </label>
+        </div>
+
+        {/* Module Type View */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Type View</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="text"
+              onChange={(e) => setModulTypeView(e.target.value)}
+              value={modulTypeView}
+              required
+            />
+          </label>
+        </div>
+
+        {/* Module Description */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Description</span>
+            <textarea
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              onChange={(e) => setModulDiscription(e.target.value)}
+              value={modulDiscription}
+              required
+            />
+          </label>
+        </div>
+
+        {/* Module Tech Dimensions */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Tech Dimensions</span>
+            <textarea
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              onChange={(e) => setModulTechDim(e.target.value)}
+              value={modulTechDim}
+            />
+          </label>
+        </div>
+
+        {/* Module Tech CD */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Tech CD</span>
+            <textarea
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              onChange={(e) => setModulTechCD(e.target.value)}
+              value={modulTechCD}
+            />
+          </label>
+        </div>
+
+        {/* Module Image 1 */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Image 1</span><span className="text-red-400"> (.jpg file &lt; 50Mb)</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="file"
+              onChange={(e) => setModulImage1(e.target.files[0])}
+              required
+            />
+          </label>
+        </div>
+
+        {/* Module Image 2 */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Image 2</span><span className="text-red-400"> (.jpg file &lt; 50Mb)</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="file"
+              onChange={(e) => setModulImage2(e.target.files[0])}
+            />
+          </label>
+        </div>
+
+        {/* Module Video Links */}
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Video Link 1</span><span className="text-red-400"> (embed format only)</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="text"
+              onChange={(e) => setModulVideoLink1(e.target.value)}
+              value={modulVideoLink1}
+            />
+          </label>
+        </div>
+
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Video Link 2</span><span className="text-red-400"> (embed format only)</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="text"
+              onChange={(e) => setModulVideoLink2(e.target.value)}
+              value={modulVideoLink2}
+            />
+          </label>
+        </div>
+
+        <div className="line m-4 mx-6 mr-12">
+          <label>
+            <span>Module Video Link 3</span><span className="text-red-400"> (embed format only)</span>
+            <input
+              className="input mx-5 bg-slate-600 text-white min-w-full p-2"
+              type="text"
+              onChange={(e) => setModulVideoLink3(e.target.value)}
+              value={modulVideoLink3}
+            />
+          </label>
+        </div>
+
+        {/* Submit Button */}
+        <div className="flex justify-center">
+          <button
+            className="btn m-4 bg-blue-500 text-white p-2 rounded"
+            type="submit"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Adding...' : 'Add Module'}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
