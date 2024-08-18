@@ -7,13 +7,13 @@ export default async function ModulesList() {
 
   return (
     <>
-      <div className="min-w-max max-w-7xl mx-auto pb-5 border-b border-white grid grid-flow-col grid-rows-6">
+      <div className="min-w-max mx-auto pb-5 border-b border-white grid grid-flow-col grid-rows-12 sm:grid-rows-6 ">
         {sortModules.map((module) => (
           <div
-            className="pr-1 pb-1 text-base text-left text-gray-300 hover:text-gray-500"
+            
             key={module.id}
           >
-            <Link href={`/modules/${module.id}`}>{module.name}</Link>
+            <Link className=" font-geist-mono mr-1 mb-1 text-base text-left text-gray-300 hover:text-gray-500" href={`/modules/${module.id}`}>{module.name}</Link>
           </div>
         ))}
       </div>

@@ -18,7 +18,8 @@ export default async function ModulePage({ params }) {
     <main className=" mt-4 mb-8 mx-auto max-w-7xl font-geist-thin  w-fit">
       <Navbar modulName={module.name} />
       <Suspense fallback={<Loading />}>
-        <div className="container flex   ">
+        <div className="container flex ">
+
           {/* image */}
           <div className="container-left block w-2/3 ">
             <div className="module-img mt-10 flex justify-center">
@@ -31,8 +32,8 @@ export default async function ModulePage({ params }) {
                 </div>}
               {/* Shops */}
             </div>
-            <span className="text-xl  flex justify-center mt-10 font-bold text-gray-400 ">Where to buy:</span>
-            <div className="shops-container flex flex-wrap justify-center gap-4 p-4 mt-4 w-full">
+            <span className="text-xl  flex justify-center items-center mt-10 font-bold text-gray-400 ">Where to buy:</span>
+            <div className="shops-container flex flex-wrap justify-center gap-4 p-4 mt-4">
               {module.shops &&
                 Object.keys(module.shops).map((key) => {
                   const shop = module.shops[key];
@@ -71,7 +72,6 @@ export default async function ModulePage({ params }) {
               </div>
               <div className="tech-discript mt-8 mb-10 mx-10 max-w-sm">
                 <h3 className="text-lg">Current Draw</h3>
-
                 <span>{dim}</span>
                 <br />
                 <h3 className="text-lg">Dimensions</h3>
