@@ -8,14 +8,15 @@ export default async function Navbar({ modulName, user }) {
   return (
     <>
       <nav className="relative mt-4 mb-8 mx-auto max-w-7xl font-geist-mono">
-        <div className="pb-1 flex items-center gap-3">
+        <div className="pb-1 flex items-center gap-3 ">
           <Link href="/">
             <Image
               src={Logo}
               alt="Happy Nerding Logo"
               quality={100}
               width={200}
-              className="border-2 border-[#D1D3D6] rounded-full hover:border-gray-200 hover:brightness-90"
+              height={100}
+              className="border-2 border-[#D1D3D6] rounded-full hover:border-gray-200 hover:brightness-90 bg-[#D1D3D6]"
               priority
             />
           </Link>
@@ -40,10 +41,11 @@ export default async function Navbar({ modulName, user }) {
             {user && <LogoutBtn />}
           </div>
         </div>
-
-        <h1 className="text-9xl tracking-tighter pb-4 pt-4 mx-auto text-[#dcddde]">
-          {modulName ? modulName : "MODULES"}
-        </h1>
+        <div className=" w-fit flex ">
+          <h1 className="lg:text-9xl md:text-9xl sm:text-8xl tracking-tighter pb-4 pt-4 text-[#dcddde] ">
+            {modulName ? modulName : "MODULES"}
+          </h1>
+        </div>
         <ModulesList />
       </nav>
     </>

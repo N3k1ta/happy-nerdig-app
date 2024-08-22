@@ -15,24 +15,26 @@ export default async function ModulePage({ params }) {
   const cd = ilRenderer(module.tech_cd);
 
   return (
-    <main className=" mt-4 mb-8 mx-auto max-w-7xl font-geist-thin  w-fit">
+    <main className=" mt-4 mb-8 mx-auto max-w-7xl font-geist-thin">
       <Navbar modulName={module.name} />
       <Suspense fallback={<Loading />}>
         <div className="container flex ">
 
           {/* image */}
-          <div className="container-left block w-2/3 ">
-            <div className="module-img mt-10 flex justify-center">
-              <div className="image-module-holder flex justify-center">
-                <img src={module.image_url_w} alt="" className="img m-2 w-2/4 " />
+          <div className="w-2/3 mt-12">
+            <div className={`mt-12 ${module.type_view === '1u' ? 'flex-row w-96 h-96' : 'flex  h-96'} justify-center `}>
+              <div className="flex justify-center ">
+                <img src={module.image_url_w} alt={module.name} className="m-2 " />
               </div>
               {module.image_url_bk &&
-                <div className="image-module-holder flex justify-center ">
-                  <img src={module.image_url_bk} alt="" className="img m-2  w-2/4 " />
+                <div className="flex justify-center" >
+                  <img src={module.image_url_bk} alt={module.name} className="m-2" />
                 </div>}
+
               {/* Shops */}
             </div>
-            <span className="text-xl  flex justify-center items-center mt-10 font-bold text-gray-400 ">Where to buy:</span>
+            <div className="h-48"> </div>
+            <span className="text-xl flex justify-center items-center mt-10  font-bold text-gray-400 ">Where to buy:</span>
             <div className="shops-container flex flex-wrap justify-center gap-4 p-4 mt-4">
               {module.shops &&
                 Object.keys(module.shops).map((key) => {
@@ -54,7 +56,6 @@ export default async function ModulePage({ params }) {
                         {shop.name}
                       </span>
                     </Link>
-
                   );
                 })}
             </div>
@@ -85,35 +86,20 @@ export default async function ModulePage({ params }) {
                 {/* video */}
                 <div className="flex justify-start">
                   <div className="video-container  my-10">
-                    {module.videolink1 && (
-                      <div className="video1">
-                        <iframe
-                          width="560"
-                          height="315"
-                          src={module.videolink1}
-                        ></iframe>
-                      </div>
-                    )}
-                    {module.videolink2 && (
-                      <div className="video2 mt-6">
-                        <iframe
-                          width="560"
-                          height="315"
-                          src={module.videolink2}
-                        ></iframe>
-                      </div>
-                    )}
-                    {module.videolink3 && (
-                      <div className="video3">
-                        <iframe
-                          width="560"
-                          height="315"
-                          src={module.videolink3}
-                        ></iframe>
-                      </div>
-                    )}
-                  </div></div>
-
+                    {module.video &&
+                      Object.keys(module.video).map((key) => {
+                        const video = module.video[key];
+                        return (
+                          <iframe
+                            key={video.id}
+                            width="560"
+                            height="315"
+                            src={video.url}
+                          ></iframe>
+                        )
+                      })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
