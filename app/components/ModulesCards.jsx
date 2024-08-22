@@ -30,7 +30,7 @@ export default async function ModulesCards() {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <main className="relative max-w-7xl mx-auto min-w-min pb-5 flex flex-wrap">
+        <main className="relative   pb-5 flex flex-wrap">
           {/* VCA / MIXER Section */}
           <div className="main-container-row">
             <h1 className="text-2xl text-gray-300">VCA / MIXER</h1>
@@ -57,7 +57,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${effect_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{effect_modul.name}</h3>
-                      <img className="xl:h-96 sm:h-h48" src={effect_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={effect_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>
@@ -74,7 +74,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${filter_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{filter_modul.name}</h3>
-                      <img className="xl:h-96 sm:h-h48" src={filter_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={filter_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>
@@ -91,7 +91,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${util_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{util_modul.name}</h3>
-                      <img className="xl:h-96 sm:h-h48" src={util_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={util_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>
@@ -108,7 +108,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${env_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{env_modul.name}</h3>
-                      <img className="xl:h-96 sm:h-h48" src={env_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={env_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>
@@ -125,7 +125,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${vco_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{vco_modul.name}</h3>
-                      <img className="xl:h-96 sm:h-h48" src={vco_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={vco_modul.image_url_w} />
                     </div>
                   </Link>
                 </div>

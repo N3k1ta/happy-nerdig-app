@@ -24,11 +24,11 @@ export default async function ModulePage({ params }) {
           <div className="w-2/3 mt-12">
             <div className={`mt-12 ${module.type_view === '1u' ? 'flex-row w-96 h-96' : 'flex  h-96'} justify-center `}>
               <div className="flex justify-center ">
-                <img src={module.image_url_w} alt={module.name} className="m-2 " />
+                <img src={module.image_url_w} alt={module.name} className="mx-4 " />
               </div>
               {module.image_url_bk &&
                 <div className="flex justify-center" >
-                  <img src={module.image_url_bk} alt={module.name} className="m-2" />
+                  <img src={module.image_url_bk} alt={module.name} className="mx-4" />
                 </div>}
 
               {/* Shops */}
