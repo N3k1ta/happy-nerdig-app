@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <div className="footer-main border-t flex justify-center mx-auto max-w-7xl">
+      <div className="footer-main border-t flex justify-center mt-32 mx-auto max-w-7xl">
         <div className="footer-icons justify-center gap-4 inline-flex p-4">
           <Link href="https://www.instagram.com/happynerding/" target="_blank" aria-label="Instagram" title="Instagram">
             <FaInstagram size={24} />

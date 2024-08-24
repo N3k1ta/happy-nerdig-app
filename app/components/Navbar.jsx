@@ -17,22 +17,18 @@ export default async function Navbar({ modulName, user }) {
               quality={100}
               width={200}
               height={100}
-              className="border-2 border-[#D1D3D6] rounded-full hover:border-gray-200 hover:brightness-90 bg-[#D1D3D6] 
-    w-[150px] h-[25px]  // Default size for mobile or smaller screens
-    sm:w-[200px] sm:h-[34px]  // Small screens
-    md:w-[200px] md:h-[34px]  // Medium screens
-    lg:w-[200px] lg:h-[34px]  // Larger screens"
+              className="border-2 border-[#D1D3D6] rounded-full hover:brightness-75 bg-[#D1D3D6] w-[150px] h-[25px] sm:w-[190px] sm:h-[34px] md:w-[190px] md:h-[34px] lg:w-[190px] lg:h-[34px]"
             />
           </Link>
           <Link
             href="/downloads"
-            className="px-5 py-1 border border-[#D1D3D6] rounded-full hover:border-gray-400 hover:text-gray-400"
+            className="px-5 font-geist-thin py-1 border border-[#D1D3D6] rounded-full hover:border-gray-400 hover:text-gray-400"
           >
             DOWNLOADS
           </Link>
           <Link
             href="/support"
-            className="px-5 py-1 border border-[#D1D3D6] rounded-full hover:border-gray-400 hover:text-gray-400"
+            className="px-5 font-geist-thin py-1 border border-[#D1D3D6] rounded-full hover:border-gray-400 hover:text-gray-400"
           >
             SUPPORT
           </Link>

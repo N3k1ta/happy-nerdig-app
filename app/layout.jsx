@@ -5,14 +5,14 @@ export const metadata = {
   title: "Happy Nerding",
   description: "Happy Nerding evrorack modular developer",
   icons: {
-    icon: '/favicon.svg',
+    icon: '/Favicon.svg',
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="w-full mx-auto max-w-7xl min-w-2xl" >
+      <body className="w-[1024px] mx-auto  " >
         {children}
         <Footer />
       </body>
