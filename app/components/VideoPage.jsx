@@ -21,7 +21,7 @@ export default function VideoPage({ modData }) {
               <button
                 key={modData.video[key].id}
                 onClick={() => setActiveTab(key)}
-                className={`px-4 py-2  ${activeTab === key ? ' border-gray-300 text-gray-200' : '  border-gray-500 text-gray-500'} rounded-md`}
+                className={`px-4 py-2  ${activeTab === key ? ' border-gray-300 text-gray-200' : '  border-gray-500 text-gray-500'} border-b  rounded-full`}
               >
                 Video {index + 1}
               </button>
