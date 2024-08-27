@@ -75,12 +75,12 @@ export default async function ModulePage({ params }) {
                 <div>{discrpt}</div>
               </div>
 
-
-
               {/* Video Section */}
-              <div className="mt-16 ">
-                <VideoPage modData={modData} />
-              </div>
+              {modData.video &&
+                <div className="mt-16 ">
+                  <VideoPage modData={modData} />
+                </div>
+              }
             </div>
           </div>
         </div>
