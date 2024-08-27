@@ -18,10 +18,10 @@ export default async function ModulePage({ params }) {
   const cd = ilRenderer(modData.tech_cd);
 
   return (
-    <main className="mt-4 mb-8 mx-auto max-w-7xl font-geist-thin">
+    <main className="mt-4 mb-8 mx-auto max-w-7xl font-geist-thin ">
       <Navbar modulName={modData.name} />
       <Suspense fallback={<Loading />}>
-        <div className="container flex mt-4">
+        <div className="flex mt-4 pr-10 sm:w-[1024px]">
           {/* Image Section */}
           <div className="w-2/3 mt-12">
             <div className={`mt-12 ${modData.type_view === '1u' ? 'flex-row w-96 h-96' : 'flex h-96'} justify-center`}>

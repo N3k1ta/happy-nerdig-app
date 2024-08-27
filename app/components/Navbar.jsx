@@ -6,7 +6,7 @@ import ModulesList from "./ModulesList";
 export default function Navbar({ modulName }) {
   return (
     <>
-      <nav className="relative mt-4 mb-8 font-geist-mono">
+      <nav className="relative lg:mt-4 sm:mt-8 mb-8 font-geist-mono">
         <div className="inline-flex items-center gap-3">
           <Link href="/">
             <Image

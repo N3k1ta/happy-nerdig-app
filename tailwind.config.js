@@ -30,7 +30,7 @@ module.exports = {
         '48': '35rem',
       },
       screens: {
-        'sm': '640px',  // (smaller tablets and large phones)
+        'sm': '340px',  // (smaller tablets and large phones)
         'md': '768px',  // (tablets)
         'lg': '1024px', // (desktops, laptops)
         'xl': '1280px', // (larger desktops)
