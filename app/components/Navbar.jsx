@@ -14,18 +14,18 @@ export default function Navbar({ modulName }) {
               quality={100}
               width={200}
               height={100}
-              className="border-b border-[#D1D3D6] rounded-full hover:border-gray-400   w-[190px] h-[32px] sm:w-[190px] sm:h-[34px] md:w-[190px] md:h-[34px] lg:w-[190px] lg:h-[34px]"
+              className="border-b hover:brightness-90 border-[#D1D3D6] rounded-full hover:border-gray-400   w-[190px] h-[32px] sm:w-[190px] sm:h-[34px] md:w-[190px] md:h-[34px] lg:w-[190px] lg:h-[34px]"
             />
           </Link>
           <Link
             href="/downloads"
-            className="px-5 font-geist-thin py-1 border-b border-[#D1D3D6] rounded-full hover:border-gray-400  "
+            className="px-5 font-geist-thin py-1 border-b border-[#D1D3D6] rounded-full hover:border-gray-400 hover:text-gray-400  "
           >
             DOWNLOADS
           </Link>
           <Link
             href="/support"
-            className="px-5 font-geist-thin py-1 border-b border-[#D1D3D6] rounded-full hover:border-gray-400 "
+            className="px-5 font-geist-thin py-1 border-b border-[#D1D3D6] rounded-full hover:border-gray-400 hover:text-gray-400 "
           >
             SUPPORT
           </Link>
