@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <div className="sm:w-[1024] lg:w-[1024px] border-t border-[#D1D3D6] flex justify-center mt-36 mx-auto max-w-7xl">
+      <div className="sm:w-[1024] lg:w-[1024px] border-t border-[#D1D3D6] flex justify-center items-end mt-36 mx-auto max-w-7xl">
         <div className="footer-icons justify-center gap-4 inline-flex p-4">
           <Link href="https://www.instagram.com/happynerding/"
             target="_blank"
