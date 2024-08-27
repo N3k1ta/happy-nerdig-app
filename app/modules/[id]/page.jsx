@@ -70,8 +70,8 @@ export default async function ModulePage({ params }) {
           {/* Info Section */}
           <div className="flex ">
             <div className="ml-4">
-              <div className="modData-type text-center max-w-3xl text-4xl mt-10">{modData.type}</div>
-              <div className="font-geist-thin text-discript p-7 max-w-2xl text-left">
+              <div className=" px-4 font-geist-thin text-center max-w-xl  text-4xl mt-10">{modData.type}</div>
+              <div className="font-geist-thin pl-12 max-w-2xl text-left">
                 <div>{discrpt}</div>
               </div>
 
