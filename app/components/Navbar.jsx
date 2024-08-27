@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "./hn-logo-3.svg";
+import Logo from "./hn-logo-obiom.svg";
 import ModulesList from "./ModulesList";
 
 export default function Navbar({ modulName }) {

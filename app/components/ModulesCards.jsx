@@ -34,9 +34,9 @@ export default async function ModulesCards() {
   return (
     <>
       <Suspense fallback={<Loading />}>
-        <main className=" relative pb-5 flex flex-wrap">
+        <main className=" relative pb-5 flex flex-wrap w-[1024px]">
           {/* VCA / MIXER Section */}
-          <div className="main-container-row">
+          <div className="main-container-row ">
             <h1 className="text-2xl font-geist-mono text-gray-400">VCA / MIXER</h1>
             <div className="flex flex-wrap max-w-fit my-5 m-3">
               {vca_modules_sorted.map((vca_modul) => (
