@@ -7,11 +7,11 @@ export default function NotFound() {
   return (
     <>
       <Navbar modulName={modulName} />
-      <main className="text-center mt-56">
+      <main className="text-center items-center mt-36">
         <h2 className="text-3xl text-gray-300 mb-5 font-geist-mono">There was a problem.</h2>
         <p className="text-xl text-gray-300 mb-5 font-geist-mono">We could not find the page you were looking for.</p>
         <p className="font-geist-mono text-2xl underline hover:text-white cursor-pointer">
-          Go back to the <Link href="/">Home</Link>.
+          Go back to the <Link href="/">Main Page</Link>
         </p>
       </main>
     </>

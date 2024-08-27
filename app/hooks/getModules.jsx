@@ -11,8 +11,8 @@ export async function getModules() {
     .select()
 
   if (error) {
-    console.log(error.message)
-    // notFound()
+    console.log(error.message);
+    notFound();
   }
   return data
 }

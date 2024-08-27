@@ -11,8 +11,8 @@ export async function getModulesType(type_view) {
     .eq('type_view', type_view)
 
   if (error) {
-    console.log(error.message)
-    // notFound()
+    console.log(error.message);
+    notFound();
   }
   return data
 }
