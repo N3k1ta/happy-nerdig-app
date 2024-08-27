@@ -11,23 +11,23 @@ import { getModule } from "@/app/hooks/getModule";
 
 
 export default async function ModulePage({ params }) {
-  const module = await getModule(params.id);
+  const modData = await getModule(params.id);
 
-  const discrpt = TextRenderer(module.discript);
-  const dim = ilRenderer(module.tech_dim);
-  const cd = ilRenderer(module.tech_cd);
+  const discrpt = TextRenderer(modData.discript);
+  const dim = ilRenderer(modData.tech_dim);
+  const cd = ilRenderer(modData.tech_cd);
 
   return (
     <main className="mt-4 mb-8 mx-auto max-w-7xl font-geist-thin">
-      <Navbar modulName={module.name} />
+      <Navbar modulName={modData.name} />
       <Suspense fallback={<Loading />}>
         <div className="container flex mt-4">
           {/* Image Section */}
           <div className="w-2/3 mt-12">
-            <div className={`mt-12 ${module.type_view === '1u' ? 'flex-row w-96 h-96' : 'flex h-96'} justify-center`}>
-              <img src={module.image_url_w} alt={module.name} className="mx-4" />
-              {module.image_url_bk && (
-                <img src={module.image_url_bk} alt={module.name} className="mx-4" />
+            <div className={`mt-12 ${modData.type_view === '1u' ? 'flex-row w-96 h-96' : 'flex h-96'} justify-center`}>
+              <img src={modData.image_url_w} alt={modData.name} className="mx-4" />
+              {modData.image_url_bk && (
+                <img src={modData.image_url_bk} alt={modData.name} className="mx-4" />
               )}
             </div>
 
@@ -45,8 +45,8 @@ export default async function ModulePage({ params }) {
             {/* Shops Section */}
             <span className="text-xl flex justify-center items-center mt-16 font-bold text-gray-400">Where to buy:</span>
             <div className="shops-container flex flex-wrap justify-center gap-4 p-4 mt-4">
-              {module.shops &&
-                Object.values(module.shops).map((shop) => (
+              {modData.shops &&
+                Object.values(modData.shops).map((shop) => (
                   <Link
                     href={shop.url}
                     key={shop.id}
@@ -70,7 +70,7 @@ export default async function ModulePage({ params }) {
           {/* Info Section */}
           <div className="flex ">
             <div className="ml-4">
-              <div className="module-type text-center max-w-3xl text-4xl mt-10">{module.type}</div>
+              <div className="modData-type text-center max-w-3xl text-4xl mt-10">{modData.type}</div>
               <div className="font-geist-thin text-discript p-7 max-w-2xl text-left">
                 <div>{discrpt}</div>
               </div>
@@ -79,7 +79,7 @@ export default async function ModulePage({ params }) {
 
               {/* Video Section */}
               <div className="mt-16 ">
-                <VideoPage module={module} />
+                <VideoPage modData={modData} />
               </div>
             </div>
           </div>
