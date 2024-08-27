@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "./hn-logo-3.svg";
-import Logo1 from "./hn-logo-1.svg"
 import ModulesList from "./ModulesList";
 import LogoutBtn from "./LogoutBtn";
 

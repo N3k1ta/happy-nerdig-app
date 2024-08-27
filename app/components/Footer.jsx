@@ -5,18 +5,30 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <div className="footer-main border-t flex justify-center mt-32 mx-auto max-w-7xl">
+      <div className="w-[1024px] border-t flex justify-center mt-36 mx-auto max-w-7xl">
         <div className="footer-icons justify-center gap-4 inline-flex p-4">
-          <Link href="https://www.instagram.com/happynerding/" target="_blank" aria-label="Instagram" title="Instagram">
+          <Link href="https://www.instagram.com/happynerding/"
+            target="_blank"
+            aria-label="Instagram"
+            title="Instagram">
             <FaInstagram size={24} />
           </Link>
-          <Link href="https://www.youtube.com/@happynerding4369" target="_blank" aria-label="YouTube" title="YouTube">
+          <Link href="https://www.youtube.com/@happynerding4369"
+            target="_blank"
+            aria-label="YouTube"
+            title="YouTube">
             <FaYoutube size={24} />
           </Link>
-          <Link href="https://www.facebook.com/HappyNerding/" target="_blank" aria-label="Facebook" title="Facebook">
+          <Link href="https://www.facebook.com/HappyNerding/"
+            target="_blank"
+            aria-label="Facebook"
+            title="Facebook">
             <FaFacebook size={24} />
           </Link>
-          <Link href="https://modulargrid.net/d/vendors/view/223/" target="_blank" aria-label="Modular Grid" title="Modular Grid">
+          <Link href="https://modulargrid.net/d/vendors/view/223/"
+            target="_blank"
+            aria-label="Modular Grid"
+            title="Modular Grid">
             <FaTh size={24} />
           </Link>
         </div>

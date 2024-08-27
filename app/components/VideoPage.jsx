@@ -2,7 +2,6 @@
 import { useState } from 'react';
 
 export default function VideoPage({ modData }) {
-
   if (!modData.video) {
     return null;
   }
@@ -14,6 +13,7 @@ export default function VideoPage({ modData }) {
   }
 
   const [activeTab, setActiveTab] = useState(videoKeys[0]);
+
 
   return (
     <>
