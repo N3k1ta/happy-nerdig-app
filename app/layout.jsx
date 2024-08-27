@@ -5,7 +5,7 @@ export const metadata = {
   title: "Happy Nerding",
   description: "Happy Nerding evrorack modular developer",
   icons: {
-    icon: '/Favicon.svg',
+    icon: '/favicon.svg',
   },
 };
 
