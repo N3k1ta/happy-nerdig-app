@@ -14,7 +14,7 @@ export default function Navbar({ modulName }) {
               quality={100}
               width={200}
               height={100}
-              className="border-2 border-[#D1D3D6] rounded-full hover:brightness-75 bg-[#D1D3D6] w-[150px] h-[25px] sm:w-[190px] sm:h-[34px] md:w-[190px] md:h-[34px] lg:w-[190px] lg:h-[34px]"
+              className="border-2 border-[#D1D3D6] rounded-full hover:brightness-75 bg-[#D1D3D6] w-[190px] h-[32px] sm:w-[190px] sm:h-[34px] md:w-[190px] md:h-[34px] lg:w-[190px] lg:h-[34px]"
             />
           </Link>
           <Link

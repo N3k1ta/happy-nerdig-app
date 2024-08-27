@@ -27,6 +27,10 @@ export default async function ModulesCards() {
   const vco_modules_sorted = sortedModules(vco_modules);
   const dotcom_modules_sorted = sortedModules(dotcom_modules);
 
+
+
+
+
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -36,11 +40,11 @@ export default async function ModulesCards() {
             <h1 className="text-2xl font-geist-mono text-gray-400">VCA / MIXER</h1>
             <div className="flex flex-wrap max-w-fit my-5 m-3">
               {vca_modules_sorted.map((vca_modul) => (
-                <div className="max-w-sm font-geist-thin inline-grid transition-transform cursor-pointer" key={vca_modul.id}>
+                <div div className="max-w-sm font-geist-thin inline-grid transition-transform cursor-pointer" key={vca_modul.id} >
                   <Link href={`/modules/${vca_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{vca_modul.name}</h3>
-                      <img className="h-96 sm:h48" src={vca_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={vca_modul.image_url_w} alt={vca_modul.name} />
                     </div>
                   </Link>
                 </div>
@@ -57,7 +61,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${effect_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{effect_modul.name}</h3>
-                      <img className="h-96 sm:h48" src={effect_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={effect_modul.image_url_w} alt={effect_modul.name} />
                     </div>
                   </Link>
                 </div>
@@ -74,7 +78,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${filter_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{filter_modul.name}</h3>
-                      <img className="h-96 sm:h48" src={filter_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={filter_modul.image_url_w} alt={filter_modul.name} />
                     </div>
                   </Link>
                 </div>
@@ -91,7 +95,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${util_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{util_modul.name}</h3>
-                      <img className="h-96 sm:h48" src={util_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={util_modul.image_url_w} alt={util_modul.name} />
                     </div>
                   </Link>
                 </div>
@@ -108,7 +112,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${env_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{env_modul.name}</h3>
-                      <img className="h-96 sm:h48" src={env_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={env_modul.image_url_w} alt={env_modul.name} />
                     </div>
                   </Link>
                 </div>
@@ -125,7 +129,7 @@ export default async function ModulesCards() {
                   <Link href={`/modules/${vco_modul.id}`}>
                     <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                       <h3 className="text-sm pb-1">{vco_modul.name}</h3>
-                      <img className="h-96 sm:h48" src={vco_modul.image_url_w} />
+                      <img className="h-96 sm:h48" src={vco_modul.image_url_w} alt={vco_modul.name} />
                     </div>
                   </Link>
                 </div>
@@ -143,7 +147,7 @@ export default async function ModulesCards() {
                     <Link href={`/modules/${u1_modul.id}`}>
                       <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                         <h3 className="text-sm pb-1">{u1_modul.name}</h3>
-                        <img className="h-auto" src={u1_modul.image_url_w} />
+                        <img className="h-auto" src={u1_modul.image_url_w} alt={u1_modul.name} />
                       </div>
                     </Link>
 
@@ -161,7 +165,7 @@ export default async function ModulesCards() {
                     <Link href={`/modules/${dotcom_modul.id}`}>
                       <div className="my-4 mx-2 text-sm rounded-md py-3 px-4">
                         <h3 className="text-sm pb-1">{dotcom_modul.name}</h3>
-                        <img className="h-96" src={dotcom_modul.image_url_w} />
+                        <img className="h-96" src={dotcom_modul.image_url_w} alt={dotcom_modul.name} />
                       </div>
                     </Link>
                   </div>
@@ -170,7 +174,7 @@ export default async function ModulesCards() {
             </div>
           </div>
         </main>
-      </Suspense>
+      </Suspense >
     </>
   );
 }
