@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "./hn-logo-obiom.svg";
 import ModulesList from "./ModulesList";
+import Typewriter from "./Typewriter";
 
 export default function Navbar({ modulName }) {
   return (
@@ -32,7 +33,8 @@ export default function Navbar({ modulName }) {
         </div>
         <div className="w-fit flex">
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tighter pb-4 pt-4 text-[#dcddde]">
-            {modulName ? modulName : "MODULES"}
+          <Typewriter text={modulName ? modulName : "MODULES"} speed={150} />
+
           </h1>
         </div>
         <ModulesList />
