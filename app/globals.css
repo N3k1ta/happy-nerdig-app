@@ -23,3 +23,6 @@ body {
   padding-inline: 2.5rem;
 
 }
+.text-indent {
+  text-indent: 6px; /* Adjust the value to your desired indentation */
+}

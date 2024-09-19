@@ -25,9 +25,9 @@ export default async function ModulePage({ params }) {
           {/* Image Section */}
           <div className="w-2/3 mt-12">
             <div className={`mt-12 ${modData.type_view === '1u' ? 'flex-row w-96 h-96' : 'flex h-96'} justify-center`}>
-              <img src={modData.image_url_w} alt={modData.name} className="mx-4" />
+              <img src={modData.image_url_w} alt={modData.name} className={`mx-4 ${modData.type_view === '1u' ? 'mb-4' : 'mb-0'}`} />
               {modData.image_url_bk && (
-                <img src={modData.image_url_bk} alt={modData.name} className="mx-4" />
+                <img src={modData.image_url_bk} alt={modData.name} className={`mx-4 ${modData.type_view === '1u' ? 'mb-4' : 'mb-0'}`} />
               )}
             </div>
 
@@ -70,7 +70,7 @@ export default async function ModulePage({ params }) {
           {/* Info Section */}
           <div className="flex ">
             <div className="ml-4">
-              <div className=" px-4 font-geist-thin text-center max-w-xl  text-4xl mt-10">{modData.type}</div>
+              <div className=" px-4 mb-4 font-geist-thin text-center max-w-xl  text-4xl mt-10">{modData.type}</div>
               <div className="font-geist-thin pl-12 max-w-2xl text-left">
                 <div>{discrpt}</div>
               </div>
